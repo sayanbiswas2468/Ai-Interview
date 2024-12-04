@@ -6,7 +6,6 @@ import Hero from '../components/custom/Hero'
 import Loader from '@/components/custom/Loader'
 const Home = () => {
   const [trigger, setTrigger] = useState(false)
-  const [permissionsGranted, setPermissionsGranted] = useState(false);
   const [loading, setLoading] = useState(false);
   const handleClick = () => {
     setTrigger((prev) => !prev)
@@ -15,7 +14,6 @@ const Home = () => {
     setLoading(true);
     try {
       await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
-      setPermissionsGranted(true);
     } catch (error) {
       if (error instanceof DOMException) {
         if (error.name === "NotAllowedError" || error.name === "PermissionDeniedError") {
