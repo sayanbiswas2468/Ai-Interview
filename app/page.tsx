@@ -33,10 +33,9 @@ const Home = () => {
         alert("An unexpected error occurred. Please try again.");
       }
     } finally {
-      setLoading(false); // Hide loader
+      setLoading(false); 
     }
   };
-
 
 
   return (
